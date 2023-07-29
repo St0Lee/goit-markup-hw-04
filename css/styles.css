@@ -38,6 +38,11 @@ img {
   margin-right: 156px;
 }
 
+.container-footer {
+  display: flex;
+  align-items: baseline;
+}
+
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -75,6 +80,8 @@ body {
 
 .header-main {
   border-bottom: 1px solid var(--accent);
+  box-shadow: зі значенням 0px 2px 1px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
 }
 
 .header-container {
@@ -87,8 +94,9 @@ body {
 .header-list {
   display: flex;
   gap: 40px;
-  padding-top: 24px;
+  padding: 24px 0;
 }
+
 .header-navigation {
   display: flex;
   gap: 76px;
@@ -104,6 +112,7 @@ body {
   letter-spacing: 0.03em;
   text-transform: uppercase;
   margin-right: 76px;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header-logo-studio {
@@ -134,16 +143,23 @@ body {
   color: var(--pressed-state);
 }
 
+.header-item {
+  position: relative;
+}
+
 .current {
   color: var(--pressed-state);
 }
 
 .current::after {
   content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
   display: block;
   background-color: var(--pressed-state);
   height: 4px;
-  border-radius: 5px;
+  border-radius: 2px;
   margin-top: 20px;
 }
 
@@ -164,6 +180,7 @@ body {
   line-height: 1.5;
   letter-spacing: 0.02em;
   font-weight: 400;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .address-contacts:hover {
@@ -174,6 +191,10 @@ body {
 }
 
 .order-service-section {
+  max-width: 1440px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   background-color: var(--dark);
   height: 600px;
   padding: 188px 0;
@@ -191,6 +212,10 @@ body {
 }
 
 .footer-logo {
+  margin-right: 120px;
+}
+
+.footer-logo-link {
   color: var(--primary-brand);
   font-family: "Raleway", sans-serif;
   font-size: 18px;
@@ -227,27 +252,43 @@ body {
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: var(--white-background);
-  margin-left: 120px;
+  margin-bottom: 16px;
 }
 
 .socials-footer-list {
   display: flex;
   gap: 16px;
   justify-content: center;
-  margin-left: 120px;
-  margin-top: 16px;
   fill: var(--light);
 }
 
-.social-footer-link {
+.social-footer-item {
+  width: 40px;
+  height: 40px;
+}
+
+.socials-footer-link {
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: var(--primary-brand);
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
   width: 40px;
   height: 40px;
-  border-radius: 50%;
+}
+
+.socials-footer-icon {
   fill: var(--light);
+}
+
+.socials-footer-link:hover {
+  background-color: var(--success);
+}
+
+.socials-footer-link:focus {
+  background-color: var(--success);
 }
 
 /*Studio*/
@@ -279,6 +320,7 @@ body {
   display: block;
   margin: 0 auto;
   min-width: 169px;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .order-service-button:hover {
@@ -333,6 +375,9 @@ body {
   padding: 24px 100px;
   background-color: var(--light);
   border-radius: 4px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
 }
 
 .services-section {
@@ -426,18 +471,29 @@ body {
   margin-top: 8px;
 }
 
-.social-links-icon {
-  fill: var(--light);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.team-social-item {
+.social-links {
+  width: 100%;
+  height: 100%;
   background-color: var(--primary-brand);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 40px;
   height: 40px;
-  border-radius: 50%;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.social-links:hover {
+  background-color: var(--pressed-state);
+}
+
+.social-links:focus {
+  background-color: var(--pressed-state);
+}
+
+.social-links-icon {
+  fill: var(--light);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -459,18 +515,38 @@ body {
 
 .customer-list {
   display: flex;
-  justify-content: center;
   gap: 24px;
 }
+
 .customers-item {
-  border-radius: 4px;
+  width: calc((100% - 120px) / 6);
+  height: 88px;
+}
+
+.customers-link {
+  width: 100%;
+  height: 100%;
   border: 1px solid var(--subtle-text);
-  padding: 16px 32px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--subtle-text);
   border-color: var(--subtle-text);
 }
 
+.customers-link:hover {
+  border-color: var(--pressed-state);
+  color: var(--pressed-state);
+}
+
+.customers-link:focus {
+  border-color: var(--pressed-state);
+  color: var(--pressed-state);
+}
+
 .customers-icon {
-  fill: var(--subtle-text);
+  fill: currentColor;
 }
 
 /*Portfolio*/
@@ -499,17 +575,25 @@ body {
   cursor: pointer;
   border-radius: 4px;
   padding: 12px 24px;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .filter-button:hover {
   color: var(--white-background);
   background-color: var(--pressed-state);
   border: 1px solid transparent;
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 .filter-button:focus {
   color: var(--white-background);
   background-color: var(--pressed-state);
   border: 1px solid transparent;
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
 .filter-button-text {
@@ -535,25 +619,31 @@ body {
 .portfolio-item {
   background: var(--white-background);
   width: calc((100% - 2 * 24px) / 3);
+  display: block;
 }
 
-.portfolio-item:hover {
+.portfolio-link {
+  display: block;
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.portfolio-link:hover {
   box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08),
     0px 1px 1px 0px rgba(46, 47, 66, 0.16),
     0px 1px 6px 0px rgba(46, 47, 66, 0.08);
 }
 
-.portfolio-item:focus {
+.portfolio-link:focus {
   box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08),
     0px 1px 1px 0px rgba(46, 47, 66, 0.16),
     0px 1px 6px 0px rgba(46, 47, 66, 0.08);
 }
 
-.portfolio-item:hover .portfolio-picture-cover {
+.portfolio-link:hover .portfolio-cover-text {
   transform: translateY(0);
 }
 
-.portfolio-item:focus .portfolio-picture-cover {
+.portfolio-link:focus .portfolio-cover-text {
   transform: translateY(0);
 }
 
@@ -562,24 +652,19 @@ body {
   overflow: hidden;
 }
 
-.portfolio-picture-cover {
+.portfolio-cover-text {
   position: absolute;
   top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: var(--primary-brand);
-  padding: 40px 32px 0 32px;
-  transform: translateY(100%);
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.portfolio-cover-text {
-  color: var(--cloud, #f4f4fd);
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
-  font-weight: 400;
+  color: var(--light);
+  padding: 40px 32px;
+  background-color: var(--primary-brand);
+  height: 100%;
+  width: 100%;
+  transform: translateY(100%);
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio-picture-apps {
@@ -618,7 +703,8 @@ img {
   height: 100%;
   background-color: rgba(46, 47, 66, 0.4);
   top: 0;
-  transition: opacity 300ms linear, visibility 300ms linear;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal {
@@ -632,7 +718,7 @@ img {
   border-radius: 4px;
   box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.2),
     0px 1px 3px 0px rgba(0, 0, 0, 0.12), 0px 1px 1px 0px rgba(0, 0, 0, 0.14);
-  transition: transform 300ms linear;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .backdrop.is-hidden .modal {
@@ -641,16 +727,42 @@ img {
 
 .modal-close-button {
   position: absolute;
-  top: 32px;
-  right: 34px;
+  top: 24px;
+  right: 24px;
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  background-color: var(--light);
+  background-color: var(--accent);
   display: flex;
   justify-content: center;
   align-items: center;
   border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 0;
+  cursor: pointer;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-close-button:hover {
+  background-color: var(--pressed-state);
+  border: none;
+}
+
+.modal-close-button:focus {
+  background-color: var(--pressed-state);
+  border: none;
+}
+
+.modal-close-icon {
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-close-icon:hover {
+  fill: var(--white-background);
+}
+
+.modal-close-icon:focus {
+  fill: var(--white-background);
 }
 
 .is-hidden {
