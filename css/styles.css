@@ -116,6 +116,7 @@ body {
 }
 
 .header-link {
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   color: var(--dark);
   font-size: 16px;
   font-weight: 500;
@@ -124,8 +125,15 @@ body {
   padding-top: 24px;
   padding-bottom: 24px;
   position: relative;
+}
+
+.address-contacts {
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  position: relative;
+  color: var(--text);
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  font-weight: 400;
 }
 
 .header-link:hover {
@@ -138,12 +146,6 @@ body {
 
 .header-link:active {
   color: var(--pressed-state);
-}
-
-.header-navigation {
-  transition-property: color;
-  transition-duration: 250ms;
-  transition-timing-function: (0.4, 0, 0.2, 1);
 }
 
 .current {
@@ -166,23 +168,11 @@ body {
   font-style: normal;
   display: flex;
   margin-left: auto;
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .address-list {
   display: flex;
   gap: 40px;
-}
-
-.address-contacts {
-  color: var(--text);
-  font-size: 16px;
-  line-height: 1.5;
-  letter-spacing: 0.02em;
-  font-weight: 400;
-  transition-property: color;
-  transition-duration: 250ms;
-  transition-timing-function: (0.4, 0, 0.2, 1);
 }
 
 .address-contacts:hover {
