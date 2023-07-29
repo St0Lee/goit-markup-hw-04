@@ -142,7 +142,7 @@ body {
   color: var(--pressed-state);
 }
 
-.header-item {
+.header-list {
   transition-property: color;
   transition-duration: 250ms;
   transition-timing-function: (0.4, 0, 0.2, 1);
@@ -186,7 +186,7 @@ body {
   transition-timing-function: (0.4, 0, 0.2, 1);
 }
 
-.address-item {
+.address-list {
   transition-property: color;
   transition-duration: 250ms;
   transition-timing-function: (0.4, 0, 0.2, 1);
