@@ -94,7 +94,6 @@ body {
 }
 .header-navigation {
   display: flex;
-  gap: 76px;
   justify-content: center;
   align-items: center;
 }
@@ -276,9 +275,7 @@ body {
   border-radius: 50%;
   width: 40px;
   height: 40px;
-  transition-property: background-color;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .socials-footer-icon {
