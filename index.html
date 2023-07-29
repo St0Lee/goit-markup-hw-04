@@ -28,7 +28,7 @@
           >
           <ul class="list header-list">
             <li class="header-item">
-              <a class="header-link link" href="./index.html">Studio</a>
+              <a class="header-link link current" href="./index.html">Studio</a>
             </li>
             <li class="header-item">
               <a class="header-link link" href="./portfolio.html">Portfolio</a>
@@ -61,7 +61,7 @@
           <h1 class="order-service-title">
             Effective Solutions for Your Business
           </h1>
-          <button class="order-service-button" type="button">
+          <button class="order-service-button" data-modal-open type="button">
             <span class="text-button">Order Service</span>
           </button>
         </div>
@@ -454,44 +454,52 @@
             <div class="social-media-container">
               <ul class="list socials-footer-list">
                 <li class="socials-footer-item">
-                  <svg
-                    class="socials-footer-icon"
-                    href=""
-                    width="24px"
-                    height="24px"
-                  >
-                    <use href="./images/icons.svg#icon-instagram-2"></use>
-                  </svg>
+                  <a class="link social-footer-link" href="">
+                    <svg
+                      class="socials-footer-icon"
+                      href=""
+                      width="24px"
+                      height="24px"
+                    >
+                      <use href="./images/icons.svg#icon-instagram-2"></use>
+                    </svg>
+                  </a>
                 </li>
                 <li class="socials-footer-item">
-                  <svg
-                    class="socials-footer-icon"
-                    href=""
-                    width="24px"
-                    height="24px"
-                  >
-                    <use href="./images/icons.svg#icon-twitter-footer"></use>
-                  </svg>
+                  <a class="link social-footer-link" href="">
+                    <svg
+                      class="socials-footer-icon"
+                      href=""
+                      width="24px"
+                      height="24px"
+                    >
+                      <use href="./images/icons.svg#icon-twitter-footer"></use>
+                    </svg>
+                  </a>
                 </li>
                 <li class="socials-footer-item">
-                  <svg
-                    class="socials-footer-icon"
-                    href=""
-                    width="24px"
-                    height="24px"
-                  >
-                    <use href="./images/icons.svg#icon-facebook-footer"></use>
-                  </svg>
+                  <a class="link social-footer-link" href="">
+                    <svg
+                      class="socials-footer-icon"
+                      href=""
+                      width="24px"
+                      height="24px"
+                    >
+                      <use href="./images/icons.svg#icon-facebook-footer"></use>
+                    </svg>
+                  </a>
                 </li>
                 <li class="socials-footer-item">
-                  <svg
-                    class="socials-footer-icon"
-                    href=""
-                    width="24px"
-                    height="24px"
-                  >
-                    <use href="./images/icons.svg#icon-linkedin-footer"></use>
-                  </svg>
+                  <a class="link social-footer-link" href="">
+                    <svg
+                      class="socials-footer-icon"
+                      href=""
+                      width="24px"
+                      height="24px"
+                    >
+                      <use href="./images/icons.svg#icon-linkedin-footer"></use>
+                    </svg>
+                  </a>
                 </li>
               </ul>
             </div>
@@ -499,5 +507,15 @@
         </ul>
       </div>
     </footer>
+    <div class="backdrop is-hidden" data-modal>
+      <div class="modal">
+        <button type="button" class="modal-close-button" data-modal-close>
+          <svg class="modal-close-icon" width="8px" height="8px">
+            <use href="./images/icons.svg#icon-close"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <script src="./js/modal.js"></script>
   </body>
 </html>
